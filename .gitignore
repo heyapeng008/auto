@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+dist
+TODOs.md
+
+# jetbrains files
+.idea
+ssh_keys
+config.json

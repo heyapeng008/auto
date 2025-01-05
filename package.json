@@ -1,0 +1,15 @@
+{
+    "name": "auto-git-push",
+    "version": "1.0.0",
+    "description": "A Node.js script to automatically push code to a Git repository daily.",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "node-schedule": "^2.1.0"
+    },
+    "author": "Your Name",
+    "license": "MIT"
+  }
+  
