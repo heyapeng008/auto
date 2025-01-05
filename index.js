@@ -75,11 +75,11 @@ const pushCode = () => {
 
   exec(gitCommands, (error, stdout, stderr) => {
     if (error) {
-      console.error('Error during git push:', error);
+      console.error('Error during git push:', error.message);
+      console.error('Git Command Output:', stderr);
       return;
     }
     console.log('Git push successful:', stdout);
-    if (stderr) console.error('Git push warnings:', stderr);
   });
 };
 
