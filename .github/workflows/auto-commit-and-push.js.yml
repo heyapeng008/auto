@@ -1,0 +1,36 @@
+name: Auto Commit and Push
+
+on:
+  schedule:
+    # 每15分钟运行一次（UTC时间）
+    - cron: "*/15 * * * *"
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # 必须启用持久化凭证，否则无法推送
+          persist-credentials: true
+
+      # 2. 模拟修改文件（示例：更新当前时间到 log.txt）
+      - name: Update file
+        run: |
+          echo "Auto-update at $(date)" >> log.txt
+
+      # 3. 配置 Git 用户信息
+      - name: Set Git config
+        run: |
+          git config --global user.name "CrazyMrYan"
+          git config --global user.email "crazymryan@gmail.com"
+
+      # 4. 执行 git add, commit, push
+      - name: Commit and Push
+        run: |
+          git add .
+          git commit -m "Auto-commit: Update log at $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          git push origin main
