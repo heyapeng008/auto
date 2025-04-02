@@ -25,8 +25,8 @@ jobs:
       # 3. 配置 Git 用户信息
       - name: Set Git config
         run: |
-          git config --global user.name "CrazyMrYan"
-          git config --global user.email "crazymryan@gmail.com"
+          git config --global user.name "heyapeng008"
+          git config --global user.email "476284794@qq.com"
 
       # 4. 执行 git add, commit, push
       - name: Commit and Push
